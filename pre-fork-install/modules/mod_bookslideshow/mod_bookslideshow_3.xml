@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+  <name>Book Library Software -  SlideShow FREE</name>
+	<creationDate>January 2012</creationDate>	
+	<author>OrdaSoft</author>
+  <copyright>Copyright (C) 2012 OrdaSoft, All rights reserved.</copyright>
+  <authorEmail>akbet@ordasoft.com</authorEmail>
+  <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license> 
+  <authorUrl>http://www.ordasoft.com</authorUrl>
+	<version>3.0 FREE</version>
+  <description>Book Library Software -  SlideShow</description>
+  
+  
+	<files>
+		<filename module="mod_bookslideshow">mod_bookslideshow_3.php</filename>
+		<filename>mod_bookslideshow_3.xml</filename>
+        <filename>mod_bookslideshow.php</filename>
+        <filename>mod_bookslideshow.xml</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+		<folder>language</folder>
+	</files>
+	
+<!--JooMla 1.5-->
+
+
+<params>	
+         <param  name="count_book" type="text" extension="com_booklibrary"  default="4" label="Count of book" description="Count of book. Zero means not display any book" />
+                    
+          <param  name="cat_id" type="text" extension="com_booklibrary"  default=" " label="IDs of categories" description="Input IDs of categories through a comma to show all items of this categories. Leave the param empty if you want to show items of all categories." />
+          
+          <param  name="book_id" type="text" extension="com_booklibrary"  default=" " label="IDs of book" description="Input IDs of book through a comma. Leave the param empty if you want to show all items." />
+				<param name="sort_by" type="list" default="0" label="Sort by" description="MOD BOOKSLIDESHOW SORT BY DESC">
+					<option value="4">Popular</option>
+					<option value="3">TiTle</option>
+					<option value="2">Price</option>
+					<option value="1">Date</option>
+					<option value="0">Randomize</option>
+				</param>
+				<param name="show_title" type="radio" default="1" label="Show title" description="MOD BOOKSLIDESHOW SHOW TITLE DESC">
+					<option value="0">NO</option>
+					<option value="1">YES</option>
+				</param>
+        
+        <param name="limit_title" type="text" default="12" size="10" label="Title limit" description="Set limit in letters for title" />
+				
+        <param name="link_title" type="radio" default="1" label="Link title" description="MOD BOOKSLIDESHOW LINK TITLE DESC">
+          <option value="0">NO</option>
+          <option value="1">YES</option>
+        </param>
+                			
+        <param name="show_price" type="radio" default="1" label="Show Price" description="MOD BOOKSLIDESHOW SHOW PRICE DESC">
+          <option value="0">NO</option>
+          <option value="1">YES</option>
+        </param>
+        
+        <param name="link_price" type="radio" default="0" label="Link Price" description="MOD BOOKSLIDESHOW LINK PRICE DESC">
+          <option value="0">NO</option>
+          <option value="1">YES</option>
+        </param>
+                  
+        <param name="slider_type" type="list" default="0" label="Slider type" description="MOD BOOKSLIDESHOW SLIDER TYPE DESC">
+					<option value="0">Horizontal</option>
+					<option value="1">Vertical</option>
+					<option value="2">Fade</option>
+				</param>
+        
+       
+        
+				<param name="link_image" type="list" default="1" label="Link image" description="MOD_BOOKSLIDESHOW_LINK_IMAGE_DESC">
+					<option value="0">Don't link</option>
+					<option value="1">Hyperlink</option>
+					<option value="2">Open image in modal</option>
+				</param>
+				
+				<param name="@spacer" type="" default="" label="_______________________" description="" />
+			     	<param name="@spacer" type="" default="" label="BASIC SLIDER SETTINGS" description="" />
+				<param name="@spacer" type="spacer" default="" label="" description="" />
+				
+				
+				<param name="image_width" type="text" default="121" size="10" label="Slide Width" description="MOD_BOOKSLIDESHOW_SLIDE_WIDTH_DESC" />
+				<param name="image_height" type="text" default="160" size="10" label="Slide Height" description="MOD_BOOKSLIDESHOW_SLIDE_HEIGHT_DESC" />
+				<param name="fit_to" type="list" default="0" label="Fit a size of image to" description="MOD_BOOKSLIDESHOW_FIT_SIZE_TO_DESC">
+					<option value="0">Auto</option>
+					<option value="1">Width</option>
+					<option value="2">Height</option>
+				</param>
+				<param name="visible_images" type="text" default="3" size="10" label="Visible Images" description="MOD_BOOKSLIDESHOW_VISIBLE_IMAGES_DESC" />
+				<param name="space_between_images" type="text" default="10" size="10" label="Space between images" description="MOD_BOOKSLIDESHOW_SPACE_BETWEEN_IMAGES_DESC" />
+				<param name="effect" type="list" default="Linear" label="Slide effect" description="MOD_BOOKSLIDESHOW_SLIDE_EFFECT_DESC">
+					<option value="Linear">Linear</option>
+					<option value="Cubic">Cubic</option>
+					<option value="Expo">Expo</option>
+					<option value="Circ">Circ</option>
+					<option value="Back">Back</option>
+					<option value="Bounce">Bounce</option>
+					<option value="Elastic">Elastic</option>
+				</param>
+				<param name="autoplay" type="radio" default="1" label="Autoplay" description="MOD_BOOKSLIDESHOW_AUTOPLAY_DESC">
+					<option value="0">NO</option>
+					<option value="1">YES</option>
+				</param>
+				<param name="show_buttons" type="radio" default="1" label="Show play/pause" description="MOD_BOOKSLIDESHOW_SHOW_PLAY/PAUSE_DESC">
+					<option value="0">NO</option>
+					<option value="2">YES</option>
+					<option value="1">On mouse over</option>
+				</param>
+				<param name="show_arrows" type="radio" default="1" label="Show next/prev" description="MOD_BOOKSLIDESHOW_SHOW_NEXT/PREV_DESC">
+					<option value="0">NO</option>
+					<option value="2">YES</option>
+					<option value="1">On mouse over</option>
+				</param>
+				<param name="show_custom_nav" type="radio" default="0" label="Show custom navigation" description="MOD_BOOKSLIDESHOW_SHOW_CUSTOM_NAVIGATION_DESC">
+					<option value="0">NO</option>
+					<option value="1">YES</option>
+				</param>
+			</params>
+			
+			<params group ="advanced">
+	
+				<param name="@spacer" type="" default="" label="CUSTOMISE SLIDE DESCRIPTION" description="" />
+				
+				<param name="desc_width" type="text" default="" size="10" label="Description width" description="MOD_BOOKSLIDESHOW_DESCRIPTION_WIDTH_DESC" />
+				<param name="desc_bottom" type="text" default="0" size="10" label="Description vertical position" description="MOD_BOOKSLIDESHOW_DESCRIPTION_VERTICAL_POSITION_DESC" />
+				<param name="desc_horizontal" type="text" default="0" size="10" label="Description horizontal position" description="MOD_BOOKSLIDESHOW_DESCRIPTION_HORIZONTAL_POSITION_DESC" />
+			
+				<param name="@spacer" type="" default="" label="_______________________" />
+				<param name="@spacer" type="" default="" label="CUSTOMISE BUTTONS" />
+				
+				<param name="left_arrow" type="text" default="" size="50" label="Prev Button" description="MOD_BOOKSLIDESHOW_PREV_BUTTON_DESC" />
+				<param name="right_arrow" type="text" default="" size="50" label="Next Button" description="MOD_BOOKSLIDESHOW_NEXT_BUTTON_DESC" />
+				<param name="play_button" type="text" default="" size="50" label="Play Button" description="MOD_BOOKSLIDESHOW_PLAY_BUTTON_DESC" />
+				<param name="pause_button" type="text" default="" size="50" label="Pause Button" description="MOD_BOOKSLIDESHOW_PAUSE_BUTTON_DESC" />
+				<param name="arrows_top" type="text" default="30" size="10" label="Navigation bar vertical position" description="MOD_BOOKSLIDESHOW_NAV_BAR_VERTICAL_POSITION_DESC" />
+				<param name="arrows_horizontal" type="text" default="5" size="10" label="Navigation bar horizontal position" description="MOD_BOOKSLIDESHOW_NAV_BAR_HORIZONTAL_POSITION_DESC" />
+				
+				
+				<param name="@spacer" type="" default="" label="_______________________" />
+				<param name="@spacer" type="" default="" label="SLIDE EFFECT OPTIONS" />
+				
+				<param name="effect_type" type="list" default="0" label="Slide effect type" description="MOD_BOOKSLIDESHOW_SLIDE_EFFECT_TYPE_DESC">
+					<option value="0">Auto</option>
+					<option value="easeIn">easeIn</option>
+					<option value="easeOut">easeOut</option>
+					<option value="easeInOut">easeInOut</option>
+				</param>
+				<param name="duration" type="text" default="" size="10" label="Slide transition time" description="MOD_BOOKSLIDESHOW_SLIDE_DURATION_DESC" />
+				<param name="delay" type="text" default="" size="10" label="Next slide delay" description="MOD_BOOKSLIDESHOW_NEXT_SLIDE_DELAY_DESC" />
+				<param name="@spacer" type="" default="" label="_______________________" />
+				<param name="preload" type="text" default="800" size="10" label="Preload delay time" description="MOD_BOOKSLIDESHOW_PRELOAD_DELAY_TIME_DESC" />
+				
+			</params>
+			
+			<params group ="other">
+	
+				<param	name="moduleclass_sfx"
+					type="text" extension="com_booklibrary"  default="" label="Module Class Suffix" 
+          description="Module Class Suffix. A suffix to be applied to the css class of the module; this allows individual module styling." />
+          
+        <param  name="ItemId" 
+                type="text" 
+                multiple="false"
+                size="3"
+                default=""
+                label="ItemId" 
+                description="Enter Id for Menu Item booklibrary" />
+                
+        <param
+					name="cache"
+					type="list"
+					default="0"
+					label="Caching"
+					description="COM_MODULES_PARAM_CACHING_DESC">
+					<option	value="0">No caching</option>
+				</param>
+				
+			
+		
+	</params>
+
+
+
+
+	
+<!--JOOMLA 2.5.3 -->
+	<config>
+		<fields name="params">
+      <fieldset name="basic">
+        <field type="spacer" label="&lt;hr &#47;&gt;" />
+        <field type="spacer" label="Components settings" />
+          <field  name="count_book" type="text" extension="com_booklibrary"  default="4" label="Count of book" description="Count of book. Zero means not display any book" />
+                    
+          <field  name="cat_id" type="text" extension="com_booklibrary"  default=" " label="IDs of categories" description="Input IDs of categories through a comma to show all items of this categories. Leave the field empty if you want to show items of all categories." />
+          
+          <field  name="book_id" type="text" extension="com_booklibrary"  default=" " label="IDs of book" description="Input IDs of book through a comma. Leave the field empty if you want to show all items." />
+				<field name="sort_by" type="list" default="0" label="MOD_BOOKSLIDESHOW_SORT_BY" description="MOD_BOOKSLIDESHOW_SORT_BY_DESC">
+					<option value="4">MOD_BOOKSLIDESHOW_SORT_BY_POPULAR</option>
+					<option value="3">MOD_BOOKSLIDESHOW_SORT_BY_TITLE</option>
+					<option value="2">MOD_BOOKSLIDESHOW_SORT_BY_PRICE</option>
+					<option value="1">MOD_BOOKSLIDESHOW_SORT_BY_DATE</option>
+					<option value="0">MOD_BOOKSLIDESHOW_SORT_BY_RANDOMIZE</option>
+				</field>
+				<field name="show_title" type="radio" default="1" label="MOD_BOOKSLIDESHOW_SHOW_TITLE" description="MOD_BOOKSLIDESHOW_SHOW_TITLE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+        
+        <field name="limit_title" type="text" default="12" size="10" label="Title limit" description="Set limit in letters for title" />
+				
+        <field name="link_title" type="radio" default="1" label="MOD_BOOKSLIDESHOW_LINK_TITLE" description="MOD_BOOKSLIDESHOW_LINK_TITLE_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+                				
+        <field name="show_price" type="radio" default="1" label="MOD_BOOKSLIDESHOW_SHOW_PRICE" description="MOD_BOOKSLIDESHOW_SHOW_PRICE_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+        
+        <field name="link_price" type="radio" default="0" label="MOD_BOOKSLIDESHOW_LINK_PRICE" description="MOD_BOOKSLIDESHOW_LINK_PRICE_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+        
+        
+    
+        <field name="slider_type" type="list" default="0" label="MOD_BOOKSLIDESHOW_SLIDER_TYPE" description="MOD_BOOKSLIDESHOW_SLIDER_TYPE_DESC">
+					<option value="0">MOD_BOOKSLIDESHOW_HORIZONTAL</option>
+					<option value="1">MOD_BOOKSLIDESHOW_VERTICAL</option>
+					<option value="2">MOD_BOOKSLIDESHOW_FADE</option>
+				</field>
+        
+                
+				<field name="link_image" type="list" default="1" label="MOD_BOOKSLIDESHOW_LINK_IMAGE" description="MOD_BOOKSLIDESHOW_LINK_IMAGE_DESC">
+					<option value="0">MOD_BOOKSLIDESHOW_DONT_LINK</option>
+					<option value="1">MOD_BOOKSLIDESHOW_HYPERLINK</option>
+					<option value="2">MOD_BOOKSLIDESHOW_OPEN_IMAGE_IN_MODAL</option>
+				</field>
+				
+				
+				<field type="spacer" label="&lt;hr &#47;&gt;" />
+				<field type="spacer" label="BASIC SLIDER SETTINGS" description="MOD_BOOKSLIDESHOW_SLIDER_DIMENSIONS" />
+				<field type="spacer" label="" />
+				<field name="image_width" type="text" default="121" size="10" label="MOD_BOOKSLIDESHOW_SLIDE_WIDTH" description="MOD_BOOKSLIDESHOW_SLIDE_WIDTH_DESC" />
+				<field name="image_height" type="text" default="160" size="10" label="MOD_BOOKSLIDESHOW_SLIDE_HEIGHT" description="MOD_BOOKSLIDESHOW_SLIDE_HEIGHT_DESC" />
+				<field name="fit_to" type="list" default="0" label="MOD_BOOKSLIDESHOW_FIT_SIZE_TO" description="MOD_BOOKSLIDESHOW_FIT_SIZE_TO_DESC">
+					<option value="0">MOD_BOOKSLIDESHOW_SLIDE_AUTO</option>
+					<option value="1">MOD_BOOKSLIDESHOW_SLIDE_WIDTH</option>
+					<option value="2">MOD_BOOKSLIDESHOW_SLIDE_HEIGHT</option>
+				</field>
+				<field name="visible_images" type="text" default="3" size="10" label="MOD_BOOKSLIDESHOW_VISIBLE_IMAGES" description="MOD_BOOKSLIDESHOW_VISIBLE_IMAGES_DESC" />
+				<field name="space_between_images" type="text" default="10" size="10" label="MOD_BOOKSLIDESHOW_SPACE_BETWEEN_IMAGES" description="MOD_BOOKSLIDESHOW_SPACE_BETWEEN_IMAGES_DESC" />
+				<field name="effect" type="list" default="Linear" label="MOD_BOOKSLIDESHOW_SLIDE_EFFECT" description="MOD_BOOKSLIDESHOW_SLIDE_EFFECT_DESC">
+					<option value="Linear">Linear</option>
+					<option value="Cubic">Cubic</option>
+					<option value="Expo">Expo</option>
+					<option value="Circ">Circ</option>
+					<option value="Back">Back</option>
+					<option value="Bounce">Bounce</option>
+					<option value="Elastic">Elastic</option>
+				</field>
+				<field name="autoplay" type="radio" default="1" label="MOD_BOOKSLIDESHOW_AUTOPLAY" description="MOD_BOOKSLIDESHOW_AUTOPLAY_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_buttons" type="radio" default="1" label="MOD_BOOKSLIDESHOW_SHOW_PLAY/PAUSE" description="MOD_BOOKSLIDESHOW_SHOW_PLAY/PAUSE_DESC">
+					<option value="0">JNO</option>
+					<option value="2">JYES</option>
+					<option value="1">On mouse over</option>
+				</field>
+				<field name="show_arrows" type="radio" default="1" label="MOD_BOOKSLIDESHOW_SHOW_NEXT/PREV" description="MOD_BOOKSLIDESHOW_SHOW_NEXT/PREV_DESC">
+					<option value="0">JNO</option>
+					<option value="2">JYES</option>
+					<option value="1">On mouse over</option>
+				</field>
+				<field name="show_custom_nav" type="radio" default="0" label="MOD_BOOKSLIDESHOW_SHOW_CUSTOM_NAVIGATION" description="MOD_BOOKSLIDESHOW_SHOW_CUSTOM_NAVIGATION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+			
+			<fieldset name="advanced">
+	
+				
+			
+				<field type="spacer" label="&lt;hr &#47;&gt;" />
+				<field type="spacer" label="CUSTOMISE BUTTONS" />
+				<field name="left_arrow" type="text" default="" size="50" label="MOD_BOOKSLIDESHOW_PREV_BUTTON" description="MOD_BOOKSLIDESHOW_PREV_BUTTON_DESC" />
+				<field name="right_arrow" type="text" default="" size="50" label="MOD_BOOKSLIDESHOW_NEXT_BUTTON" description="MOD_BOOKSLIDESHOW_NEXT_BUTTON_DESC" />
+				<field name="play_button" type="text" default="" size="50" label="MOD_BOOKSLIDESHOW_PLAY_BUTTON" description="MOD_BOOKSLIDESHOW_PLAY_BUTTON_DESC" />
+				<field name="pause_button" type="text" default="" size="50" label="MOD_BOOKSLIDESHOW_PAUSE_BUTTON" description="MOD_BOOKSLIDESHOW_PAUSE_BUTTON_DESC" />
+				<field name="arrows_top" type="text" default="30" size="10" label="MOD_BOOKSLIDESHOW_NAV_BAR_VERTICAL_POSITION" description="MOD_BOOKSLIDESHOW_NAV_BAR_VERTICAL_POSITION_DESC" />
+				<field name="arrows_horizontal" type="text" default="5" size="10" label="MOD_BOOKSLIDESHOW_NAV_BAR_HORIZONTAL_POSITION" description="MOD_BOOKSLIDESHOW_NAV_BAR_HORIZONTAL_POSITION_DESC" />
+				
+				<field type="spacer" label="&lt;hr &#47;&gt;" />
+				<field type="spacer" label="SLIDE EFFECT OPTIONS" />
+				<field name="effect_type" type="list" default="0" label="MOD_BOOKSLIDESHOW_SLIDE_EFFECT_TYPE" description="MOD_BOOKSLIDESHOW_SLIDE_EFFECT_TYPE_DESC">
+					<option value="0">MOD_BOOKSLIDESHOW_SLIDE_AUTO</option>
+					<option value="easeIn">easeIn</option>
+					<option value="easeOut">easeOut</option>
+					<option value="easeInOut">easeInOut</option>
+				</field>
+				<field name="duration" type="text" default="" size="10" label="MOD_BOOKSLIDESHOW_SLIDE_DURATION" description="MOD_BOOKSLIDESHOW_SLIDE_DURATION_DESC" />
+				<field name="delay" type="text" default="" size="10" label="MOD_BOOKSLIDESHOW_NEXT_SLIDE_DELAY" description="MOD_BOOKSLIDESHOW_NEXT_SLIDE_DELAY_DESC" />
+				<field type="spacer" label="&lt;hr &#47;&gt;" />
+				<field name="preload" type="text" default="800" size="10" label="MOD_BOOKSLIDESHOW_PRELOAD_DELAY_TIME" description="MOD_BOOKSLIDESHOW_PRELOAD_DELAY_TIME_DESC" />
+				
+			</fieldset>
+			
+			<fieldset name="OTHER">
+	
+				<field	name="moduleclass_sfx"
+					type="text" extension="com_booklibrary"  default="" label="Module Class Suffix" 
+          description="Module Class Suffix. A suffix to be applied to the css class of the module; this allows individual module styling." />
+          
+        <field  name="ItemId" 
+                type="text" 
+                multiple="false"
+                size="3"
+                default=""
+                label="ItemId" 
+		    description="Enter Id for Menu Item Booklibrary " />
+                
+        <field
+					name="cache"
+					type="list"
+					default="0"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option	value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				
+			</fieldset>
+		</fields>
+	</config>
+	
+</extension>

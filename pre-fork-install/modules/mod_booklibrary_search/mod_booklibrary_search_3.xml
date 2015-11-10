@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/module-install.dtd">
+<extension type="module" version="3.0">
+	<name>Booklibrary Search module FREE</name>
+	<creationDate>Jule 2011</creationDate>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license> 
+	<author>Andrey Kvasnevskiy</author>
+	<authorEmail>akbet@ordasoft.com</authorEmail>
+	<copyright>http://ordasoft.com All rights reserved.	</copyright>
+	<version>3.0 FREE</version>
+	<description>
+		Search module for BookLibrary component.
+	</description>
+	<files>
+		<filename module="mod_booklibrary_search">mod_booklibrary_search_3.php</filename>
+		<filename module="index">index.html</filename>
+		<filename>mod_booklibrary_search_3.xml</filename>
+        <filename>mod_booklibrary_search.xml</filename>
+        <filename>mod_booklibrary_search.php</filename>
+        <folder>tmpl</folder> 
+	</files>
+	
+	
+	<!--JOOMLA 2.5 -->	
+	<config>
+      <fields name="params" >
+        <fieldset name="basic">
+			
+     <field name="showAuthor" type="list" default="Show" label="Show Author" description="Show and/or search or no for field Author in the BookLibrary search module">
+      <option value="0">View and Search</option>
+      <option value="1">Search</option>
+      <option value="2">None</option>
+    </field>
+    <field name="showTitle" type="list" default="Show" label="Show Title" description="Show and/or search or no for field Title in the BookLibrary search module">
+      <option value="0">View and Search</option>
+      <option value="1">Search</option>
+      <option value="2">None</option>
+    </field>
+    <field name="showIsbn" type="list" default="Show" label="Show ISBN" description="Show and/or search or no for field ISBN in the BookLibrary search module">
+      <option value="0">View and Search</option>
+      <option value="1">Search</option>
+      <option value="2">None</option>
+    </field>
+    <field name="showBookId" type="list" default="Show" label="Show BookId" description="Show and/or search or no for field BookId in the BookLibrary search module">
+      <option value="0">View and Search</option>
+      <option value="1">Search</option>
+      <option value="2">None</option>
+    </field>
+    <field name="showDescription" type="list" default="Show" label="Show Description" description="Show and/or search or no for field Description in the BookLibrary search module">
+      <option value="0">View and Search</option>
+      <option value="1">Search</option>
+      <option value="2">None</option>
+    </field>
+    <field name="showPublisher" type="list" default="Show" label="Show Publisher" description="Show and/or search or no for field Publisher in the BookLibrary search module">
+      <option value="0">View and Search</option>
+      <option value="1">Search</option>
+      <option value="2">None</option>
+    </field>
+    <field name="showAdvanceSearch" type="list" default="Show" label="Show Advance Search link" description="Show or hide Advance Search link for switch to BookLibrary">
+      <option value="0">Show</option>
+      <option value="1">Hide</option>
+    </field>
+    <field name="showPrice" type="list" default="Show" label="Show Price from to" description="Show search by price from and to">
+      <option value="0">Show</option>
+      <option value="1">Hide</option>
+    </field>
+    
+ </fieldset>
+ 
+    <fieldset name="advanced">
+	     <field name="moduleclass_sfx" type="text" extension="com_booklibrary"  default="" label="Module Class Suffix" description="Module Class Suffix. A suffix to be applied to the css class of the module; this allows individual module styling." />
+             <field  name="ItemId" 
+                type="text" 
+                multiple="false"
+                size="3"
+                default=""
+                label="ItemId" 
+                description="Enter Id for Menu Item booklibrary">
+	      </field>
+	      
+              
+        </fieldset>
+	
+        </fields>
+      
+    </config>	
+    
+</extension>

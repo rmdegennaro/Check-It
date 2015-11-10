@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.6">
+  <name>Booklibrary From Same Author FREE </name>
+  <author>OrdaSoft - Andrey Kvasnevskiy</author>
+  <creationDate>Jule 2011</creationDate>
+  <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+  <copyright>(C) 2011 OrdaSoft - Andrey Kvasnevskiy</copyright>
+   <authorEmail>akbet@mail.ru</authorEmail>
+  <authorUrl>www.ordasoft.com</authorUrl>
+  <version>3.0 FREE </version>
+  <description>Displays the books of the same author in the booklibrary.</description>
+  <files>
+    <filename module="mod_booklibrary_fromsameauthor">mod_booklibrary_fromsameauthor.php</filename>
+    <filename module="index">index.html</filename>
+  </files>
+
+       <params>
+        <param name="count" type="text" default="5" label="Count" description="The number of items to display" />
+        <param name="words" type="text" default="" label="Description Words Count"
+               description="Word limit for book description.  Zero means no description, blank means no limit" />
+        <param name="showtitle" type="list" default="1" label="Show Title" description="Show or hide the book Title">
+          <option value="0">Hide</option>
+          <option value="1">Show</option>
+        </param>
+        <param name="showauthor" type="list" default="1" label="Show Authors" description="Show or hide the book Authors">
+          <option value="0">Hide</option>
+          <option value="1">Show</option>
+        </param>
+        <param name="showcover" type="list" default="1" label="Show Cover" description="Show or hide the book Cover">
+          <option value="0">Hide</option>
+          <option value="1">Show</option>
+        </param>
+        <param name="coversize" type="text" default="127" label="Cover Height"
+               description="Set the height of the cover (width will auto work out by keeping ratio)" />
+        <param name="displaytype" type="list" default="0" label="Display Orientation"
+               description="Display either Horizontal or Vertical">
+          <option value="0">Vertical</option>
+          <option value="1">Horizontal</option>
+        </param>
+      </params>
+      <params gruop="advanced">
+
+        <param name="moduleclass_sfx" type="text" extension="com_booklibrary"  default=""
+               label="Module Class Suffix"
+               description="Module Class Suffix. A suffix to be applied to the css class of the module; this allows individual module styling." />
+        <param  name="ItemId"
+                type="text"
+                multiple="false"
+                size="3"
+                default=""
+                label="ItemId"
+                description="Enter Id for Menu Item booklibrary" >
+
+            </param>
+  </params>
+
+
+  <!--JOMLA 2.5 -->
+  <config>
+      <fields name="params" >
+        <fieldset name="basic">
+        <field name="count" type="text" default="5" label="Count" description="The number of items to display (default is 5)" />
+        <field name="words" type="text" default="" label="Description Words Count"
+               description="Word limit for book description.  Zero means no description, blank means no limit" />
+        <field name="showtitle" type="list" default="1" label="Show Title" description="Show or hide the book Title">
+          <option value="0">Hide</option>
+          <option value="1">Show</option>
+        </field>
+        <field name="showauthor" type="list" default="1" label="Show Authors" description="Show or hide the book Authors">
+          <option value="0">Hide</option>
+          <option value="1">Show</option>
+        </field>
+        <field name="showcover" type="list" default="1" label="Show Cover" description="Show or hide the book Cover">
+          <option value="0">Hide</option>
+          <option value="1">Show</option>
+        </field>
+        <field name="coversize" type="text" default="127" label="Cover Height"
+               description="Set the height of the cover (width will auto work out by keeping ratio)" />
+        <field name="displaytype" type="list" default="0" label="Display Orientation"
+               description="Display either Horizontal or Vertical">
+          <option value="0">Vertical</option>
+          <option value="1">Horizontal</option>
+        </field>
+      </fieldset>
+      <fieldset name="advanced">
+
+        <field name="moduleclass_sfx" type="text" extension="com_booklibrary"  default=""
+               label="Module Class Suffix" description="Module Class Suffix. A suffix to be applied to the css class of the module; this allows individual module styling." />
+        <field  name="ItemId"
+                type="text"
+                multiple="false"
+                size="3"
+                default=""
+                label="ItemId"
+                description="Enter Id for Menu Item booklibrary" />
+
+      </fieldset>
+  </fields>
+</config>
+</install>

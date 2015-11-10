@@ -523,3 +523,6 @@
 /index.php
 /joomla.xml
 /*.txt
+/pre-fork-install/components/com_booklibrary/covers/*
+/components/com_booklibrary/covers/*
+/pre-fork-install/_SQLScripts/libraryprod*
