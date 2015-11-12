@@ -1,0 +1,1 @@
+-- admin/sql/updates/mysql/0.0.1.sql is an empty file allowing to initialise schema version of the com_helloworld component.
