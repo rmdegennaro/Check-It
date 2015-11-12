@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension 
+	type="module" 
+	version="3.0"
+	client="site"
+	method="upgrade">
+	<name>Booklibrary Top Listing FREE</name>
+	<author>OrdaSoft - Andrey Kvasnevskiy;Aleksey Pakholkov</author>
+	<creationDate>Jule 2011</creationDate>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license> 
+	<copyright>(C) 2011 OrdaSoft - Andrey Kvasnevskiy;Aleksey Pakholkov</copyright>
+	<authorEmail>akbet@mail.ru</authorEmail>
+	<authorUrl>www.ordasoft.com</authorUrl>
+	<version>3.0 FREE</version>
+	<description>Displays Top (you define) books, allows you to set if covers are displayed, sort by hits, date or rating. Displays Links in SEF Urls if you are using an SEF Component/Plugin</description>
+	
+	<files>
+                <filename module="mod_booklibrary_top_listing">mod_booklibrary_top_listing_3.php </filename>
+		<filename>index.html</filename>
+		<filename>mod_booklibrary_top_listing_3.xml</filename>
+        <filename>mod_booklibrary_top_listing.php</filename>
+        <filename>mod_booklibrary_top_listing.xml</filename>
+        <folder>tmpl</folder> 
+	</files>
+	
+	<params>			
+		<param name="top_number" type="text" default="10" label="How Many Top" description="Set If this is a Top 10 or top 5 or even top 1 module" />
+			
+		<param name="sort_by_top" type="list" default="0" label="Sort By" description="Display Top by...">
+			<option value="0">Hits</option>
+			<option value="1">Date</option>
+			<option value="2">Rating</option>
+		</param>
+			
+		<param name="only_published" type="radio" default="1" label="Only Include Published" description="Only Include Published Books? Set to No if you want to include all books on database Published or not">
+			<option value="0">Show All</option>
+			<option value="1">Only Published</option>
+		</param>
+			
+		<param name="covers" type="radio" default="0" label="Cover Images" description="Show/Hide Book Covers">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</param>
+			
+		<param name="cover_height" type="text" default="50" label="Cover Height" description="The height to display book covers in px. Widths are auto calculated to keep aspect ratio." />
+			
+		<param name="extras" type="radio" default="1" label="Extra Info" description="Show/Hide Extra Info (Hits etc..)">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</param>
+			
+		<param name="ranking" type="radio" default="0" label="Ranking" description="Show/Hide Ranking">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</param>
+	</params>
+                
+	<params gruop="advanced">     
+	  
+		<param name="moduleclass_sfx" 
+			type="text" 
+			extension="com_booklibrary"  
+			default="" 
+			label="Module Class Suffix" 
+			description="Module Class Suffix. A suffix to be applied to the css class of the module; this allows individual module styling." />
+		
+		<param  name="ItemId" 
+			type="text" 
+			multiple="false"
+			size="3"
+			default=""
+			label="ItemId" 
+			description="Enter Id for Menu Item booklibrary" >
+		</param>   
+	</params>	
+	
+	<!--JOOMLA 2.5 -->		
+	<config>
+		<fields name="params" >
+			<fieldset name="basic">
+			   <field
+                	name="layout"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="top_number" type="text" default="10" label="How Many Top" description="Set If this is a Top 10 or top 5 or even top 1 module" />
+				
+				<field name="sort_by_top" type="list" default="0" label="Sort By" description="Display Top by...">
+					<option value="0">Hits</option>
+					<option value="1">Date</option>
+					<option value="2">Rating</option>
+				</field>
+				
+				<field name="only_published" type="radio" default="1" label="Only Include Published" description="Only Include Published Books? Set to No if you want to include all books on database Published or not">
+					<option value="0">Show All</option>
+					<option value="1">Only Published</option>
+				</field>
+				<field name="covers" type="radio" default="0" label="Cover Images" description="Show/Hide Book Covers">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+				
+				<field name="cover_height" type="text" default="50" label="Cover Height" description="The height to display book covers in px. Widths are auto calculated to keep aspect ratio." />
+				
+				<field name="extras" type="radio" default="1" label="Extra Info" description="Show/Hide Extra Info (Hits etc..)">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+				
+				<field name="ranking" type="radio" default="0" label="Ranking" description="Show/Hide Ranking">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+			</fieldset>
+           	   
+			<fieldset name="advanced">
+				<field 
+					name="moduleclass_sfx" 
+					type="text" 
+					extension="com_booklibrary"  
+					default="" label="Module Class Suffix" 
+					description="Module Class Suffix. A suffix to be applied to the css class of the module; this allows individual module styling." />
+				<field  
+					name="ItemId" 
+					type="text" 
+					multiple="false"
+					size="3"
+					default=""
+					label="ItemId" 
+					description="Enter Id for Menu Item booklibrary">
+				</field>
+			</fieldset>
+		</fields>
+	</config>	
+</extension>

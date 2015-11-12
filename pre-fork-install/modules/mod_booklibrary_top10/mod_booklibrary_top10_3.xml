@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0">
+	<name>Booklibrary Top 10 FREE</name>
+	<author>OrdaSoft - Andrey Kvasnevskiy;Aleksey Pakholkov</author>
+  <creationDate>2011</creationDate>
+  <copyright>(C) 2011 OrdaSoft - Andrey Kvasnevskiy </copyright>
+  <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license> 
+  <authorEmail>akbet@mail.ru</authorEmail>
+  <authorUrl>www.ordasoft.com</authorUrl>
+  <version>3.0 FREE</version>
+	<description>Displays the most 10 visited books of the booklibrary.</description>
+	<files>
+		<filename module="mod_booklibrary_top10">mod_booklibrary_top10_3.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_booklibrary_top10_3.xml</filename>
+        <filename>mod_booklibrary_top10.php</filename>
+        <filename>mod_booklibrary_top10.xml</filename>
+        <folder>tmpl</folder>
+	</files>
+	
+	
+        <params gruop ="advanced">
+			<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="Module Class Suffix. A suffix to be applied to the css class of the module; this allows individual module styling." />
+			
+        <param  name="ItemId" 
+                type="text" 
+                multiple="false"
+                size="3"
+                default=""
+                label="ItemId" 
+                description="Enter Id for Menu Item booklibrary" >
+		 </param>
+        </params>
+	
+	<config>
+      <fields name="params" >
+        <fieldset name="advanced">
+			<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="Module Class Suffix. A suffix to be applied to the css class of the module; this allows individual module styling." />
+		 <field  name="ItemId" 
+                type="text" 
+                multiple="false"
+                size="3"
+                default=""
+                label="ItemId" 
+                description="Enter Id for Menu Item booklibrary" >
+	      </field>
+          </fieldset>   
+      </fields>
+       
+   </config>
+   
+</extension>
