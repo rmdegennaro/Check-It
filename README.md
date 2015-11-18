@@ -15,5 +15,3 @@ We (SSCPS.org) wanted changes that Ordasoft never responded about making.  So we
 decided to fork the project and make our module.  
 
 The original can be found at http://ordasoft.com/book-library-joomla-component.
-
-test
